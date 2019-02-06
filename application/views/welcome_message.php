@@ -9,15 +9,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<title>Home Sweet Home</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="<?= base_url('bootstrap/dist/css/bootstrap.css') ?>" rel="stylesheet">
+	<link href="<?= base_url('assets/css/bootstrap.css') ?>" rel="stylesheet">
+	<link href="<?= base_url('assets/css/extra.css') ?>" rel="stylesheet">
 
 </head>
 <body>
 	
 	<div class="container-fluid">
-		<div class="row justify-content-center">
-			<div class="col-auto pt-5">
-				<button class="btn btn-primary">This is a Primary Button</button>
+		<div class="row">
+			<div class="col-sm-1 col-md-11 col-lg-6 col-xl-3 bg-primary">
+				<button class="m-6 btn btn-success shadow-sm" type="submit">Submit Button</button>
+			</div>
+			<div class="col-sm-11 col-md-1 col-lg-6 col-xl-9 bg-secondary">
+				<button class="m-6 btn btn-danger shadow-sm" type="reset">Reset Button</button>
 			</div>
 		</div>
 	</div>
@@ -26,7 +30,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script src="<?= base_url('bootstrap/dist/js/bootstrap.bundle.min.js') ?>"></script>
 	<script>
 	$(document).ready(function () {
-		
+		$('button').hover(function () {
+				// over
+				$(this).removeClass('shadow-sm');
+				$(this).addClass('shadow-lg');
+			}, function () {
+				// out
+				$(this).removeClass('shadow-lg');
+				$(this).addClass('shadow-sm');
+			}
+		);
 	});
 	</script>
 </body>

@@ -1,0 +1,42 @@
+// Custom.scss
+$body-bg: skyblue;
+$blue:    #7c39da;
+$orange:  #fd7e14;
+$green:   #4ecdc4;
+$red:     #ff6b6b;
+$primary:       #ffe66d;
+$secondary:     #f7fff7;
+$success:       $green;
+$danger:        $red;
+
+$spacer: 1rem;
+$spacers: ();
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3),
+    6: ($spacer * 6)
+  ),
+  $spacers
+);
+
+$grid-breakpoints: ();
+$grid-breakpoints: map-merge(
+  (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 1280px,
+    xl: 1680px
+  ),
+  $grid-breakpoints
+);
+$enable-rounded: false;
+$enable-shadows: true;
+
+// Option A: Include all of Bootstrap
+@import "../../bootstrap/scss/bootstrap";
