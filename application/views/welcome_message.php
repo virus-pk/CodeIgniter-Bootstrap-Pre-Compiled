@@ -59,7 +59,69 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 		<main role="main" class="container">
 			<div class="my-3 p-3 bg-white rounded shadow-sm shadow">
-				<h6 class="border-bottom border-gray pb-2 mb-0">Form</h6>
+				<h6 class="border-bottom border-gray pb-2">Form</h6>
+				<div class="container-fluid">
+					<div class="row justify-content-center">
+						<div class="col col-lg-4">
+							<div class="jumbotron">
+								<?=form_open('', 'id="saveuser"')?>
+								<div class="form-group">
+									<label for="Fullname">Full Name</label>
+									<input
+										type="text"
+										aria-describedby="FullnameFormat"
+										name="Fullname"
+										class="form-control form-control-sm"
+										id="Fullname"
+										placeholder="Enter Full Name Here"
+										autocomplete="off"
+									/>
+									<div id="error"></div>
+								</div>
+								<div class="form-group">
+									<label for="Username">Username</label>
+									<input
+										type="text"
+										aria-describedby="UsernameFormat"
+										name="Username"
+										class="form-control form-control-sm"
+										id="Username"
+										placeholder="Enter Username Here"
+										autocomplete="off"
+									/>
+									<div id="error"></div>
+								</div>
+								<div class="form-group">
+									<label for="Password">Password</label>
+									<input
+										type="password"
+										aria-describedby="PasswordFormat"
+										name="Password"
+										class="form-control form-control-sm"
+										id="Password"
+										placeholder="Enter Password Here"
+										autocomplete="off"
+									/>
+									<div id="error"></div>
+								</div>
+								<div class="form-group">
+									<label for="Role">Role</label>
+									<select name="Role" id="Role" class="form-control form-control-sm">
+										<option value="">Please Choose Role</option>
+										<option value="admin">Admin</option>
+										<option value="receptionist">Receptionist</option>
+										<option value="accountant">Accountant</option>
+									</select>
+									<div id="error"></div>
+								</div>
+								<div class="form-group mt-3">
+									<Input type="submit" class="form-control btn btn-sm btn-primary" value="Submit" />
+								</div>
+								<?=form_close()?>
+							</div>
+						</div>
+					</div>
+				</div>
 				<small class="d-block text-right mt-3">
 					<a href="#">
 						<h6>
@@ -69,7 +131,34 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</small>
 			</div>
 			<div class="my-3 p-3 bg-white rounded shadow-sm shadow">
-				<h6 class="border-bottom border-gray pb-2 mb-0">Datatable</h6>
+				<h6 class="border-bottom border-gray pb-2">Datatable</h6>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col">
+							<div class="table-responsive">
+								<table
+									id="user-list"
+									class="table table-hover table-striped"
+									style="width:100%"
+									data-order='[[ 0, "desc" ]]'
+								>
+									<thead class="alert-primary">
+										<tr>
+											<th class="text-center align-middle ">ID</th>
+											<th class="text-center align-middle ">Full Name</th>
+											<th class="text-center align-middle ">Username</th>
+											<th class="text-center align-middle ">Password</th>
+											<th class="text-center align-middle ">Role</th>
+											<th class="text-center align-middle all">Edit</th>
+											<th class="text-center align-middle all">Delete</th>
+										</tr>
+									</thead>
+									<tbody class="bg-light"></tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
 				<small class="d-block text-right mt-3">
 					<a href="#">
 						<h6>
